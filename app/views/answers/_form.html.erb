@@ -1,0 +1,6 @@
+<%= form_for [@daily, @answer] do |answer| %>
+  <%= answer.label :answer %>
+  <%= answer.text_area :answer %>
+
+  <%= answer.submit %>
+<% end %>
