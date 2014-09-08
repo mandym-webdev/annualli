@@ -5,6 +5,7 @@ Question for: <%= @question.show_month %>/<%= @question.show_day %>
 <h3>Answers</h3>
 
 <% @question.answers.each do |answer| %>
-  <div class="answer"><%= answer.answer %> <%= @user.user_name %>  <%= answer.created_at.strftime("(%Y)") %></div>
+  <div class="answer"><%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %></div>
 <% end %>
 
+<%#= link_to @user.user_name, user_path %>

@@ -1,0 +1,7 @@
+All of our members
+
+<ul>
+<% @users.each do |user| %>
+  <li><%= link_to user.user_name, user %> </li>
+<% end %>
+</ul>
