@@ -5,9 +5,13 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
  
+
   def create
     @question = Question.find(params[:question_id])
-    if @question.answers.create( answer_params )
+    @question.answers.new( answer_params )
+    @answer = Answer.last
+    @answer.user_id = current_user.id
+    if @answer.save
       redirect_to @question
     else
       render 'new'
@@ -17,7 +21,13 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-      params.require(:answer).permit(:answer, :question_id)
+      params.require(:answer).permit(:answer, :user_id, :question_id)
   end
 
 end
+
+
+
+
+  
+ 
