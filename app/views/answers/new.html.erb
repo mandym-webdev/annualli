@@ -1,7 +1,10 @@
-<h2><%= @daily.question %></h2>
+<h1><%= @daily.question %></h1>
 
 
-<h3> Your Answer: </h3>
+<% if user_signed_in? %>
+      <%= render 'form' %>
+      <% else %>
+      <h2>Please <%= link_to 'Sign In', new_user_session_path %> to submit an answer.</h2>
+  <% end %>
 
-<%= render 'form' %>
 

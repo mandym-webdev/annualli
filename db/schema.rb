@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20140908153046) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "user_name"
+    t.string   "home_city"
+    t.string   "home_state"
+    t.string   "home_country"
+    t.string   "gender"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
