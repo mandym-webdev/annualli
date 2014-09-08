@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'questions#show'
+  root 'answers#new'
 
   resources :questions do
     resources :answers

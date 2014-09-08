@@ -1,14 +1,10 @@
-<h2><%= @daily.title %></h2>
-<br>
+Question for: <%= @question.show_month %>/<%= @question.show_day %>
 
-change these to edit/delete questions
-<%= link_to 'Delete Question', question_path(@question), method: :delete %>
-<%= link_to 'Edit Question', edit_question_path(@question)%>
+<h2><%= @question.question %></h2>
 
 <h3>Answers</h3>
 
-<%= link_to 'Add Answer', new_question_answer_path(@question) %>
-
 <% @question.answers.each do |answer| %>
-  <div class="answer"><%= answer.answer %></div>
+  <div class="answer"><%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %></div>
 <% end %>
+

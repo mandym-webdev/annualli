@@ -2,6 +2,7 @@
 
 <ul>
 <% @questions.each do |question| %>
-  <li><%= link_to question.question, question %></li>
+  <li><%= link_to question.question, question %> (<%= question.show_month %>/<%= question.show_day %>)</li>
 <% end %>
 </ul>
+

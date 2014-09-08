@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @daily = Question.find_by(show_month: Time.now.month, show_day: Time.now.day)
+    @question = Question.find( params[:id] )
   end
 
 
