@@ -1,9 +1,9 @@
 <%= form_for [@daily, @answer] do |answer| %>
-  <%= answer.label :answer %>
-  <%= answer.text_area :answer %>
+  <%= answer.label :answer, "" %>
+  <%= answer.text_area :answer %><br>
 
-  <%= f.label :tags %>
-  <%= f.text_field :tag_list %>
+  <%= answer.label :tags, "Tags (separate by commas, use '-' with multi-word tags"%>
+  <%= answer.text_field :tag_list %><br>
 
   <%= answer.submit %>
 <% end %>
