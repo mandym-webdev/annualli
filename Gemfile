@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on'
-
+gem 'select2-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
