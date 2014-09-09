@@ -2,6 +2,14 @@ class AnswersController < ApplicationController
   
 before_action :authenticate_user!, except: [:index, :show, :new]
 
+  def index
+    if params[:tag]
+      @answers = Answer.tagged_with(params[:tag])
+    else
+      @answers = Answer.all
+    end
+  end
+
   def new
     @daily = Question.find_by(show_month: Time.now.month, show_day: Time.now.day)
     @answer = Answer.new
@@ -19,10 +27,18 @@ before_action :authenticate_user!, except: [:index, :show, :new]
     end
   end
 
+  def tagged
+    if params[:tag].present? 
+      @answers = Answer.tagged_with(params[:tag])
+    else 
+      @answers = Answer.postall
+    end  
+  end
+
   private
 
   def answer_params
-      params.require(:answer).permit(:answer, :user_id, :question_id)
+      params.require(:answer).permit(:answer, :user_id, :question_id, :tag_list)
   end
 
 end
