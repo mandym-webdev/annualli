@@ -1,9 +1,10 @@
 <h2>Answers tagged with: <%= @tag.name %></h2>
 
-<% @tags.answers.each do |tags| %>
+<% @tag.answers.each do |tags| %>
   <h3><%= question.question %> </h3>
     <% question.answers.each do |answer| %>
       <%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %>
       Tags: <%= raw answer.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %>
   <% end %>
 <% end %>
+

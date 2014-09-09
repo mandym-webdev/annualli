@@ -1,6 +1,8 @@
-<h2>Welcome <%= @user.user_name %></h2>
-
-<h3>Your Questions and Answers</h3>
+<div id="tag_cloud">
+  <% tag_cloud Answer.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
 
 <% @user.questions.uniq.each do |question| %>
   <h3><div class="answer"><%= question.question %> </div></h3>
@@ -11,9 +13,3 @@
     <% end %>
   <% end %>
 <% end %>
-
-<!-- <h3>Profile</h3>
-<ul>
-  <li></li>
-
-</ul> -->

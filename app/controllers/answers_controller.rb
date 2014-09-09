@@ -10,6 +10,10 @@ before_action :authenticate_user!, except: [:index, :show, :new]
     end
   end
 
+  def show  
+    @article = Answer.find(params[:id])
+  end
+
   def new
     @daily = Question.find_by(show_month: Time.now.month, show_day: Time.now.day)
     @answer = Answer.new
