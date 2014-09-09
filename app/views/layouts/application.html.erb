@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>AnnualliMon</title>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,15 +18,14 @@
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %>
       <% end %>
-    </li>
-    <li><%= link_to 'Answer Today\'s Question', root_path %></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+      |  </li>
+    <li><%= link_to 'Answer Today\'s Question', root_path %>  |  </li>
+    <li><%= link_to 'See All Questions', questions_path %>  |  </li>
+    <li><%= link_to 'See All Users', users_path %>  |  </li>
+    <li><% if @user %>
+      <%= link_to 'See Your Answers', user_path %></li>
+      <% end %>
   </ul>
-
-
 </nav>
 
 

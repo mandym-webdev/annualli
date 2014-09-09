@@ -1,17 +1,14 @@
+<header>
+  <!-- <h2>Tagged Answers:</h2> -->
 
 
-<h2>Tagged Answers:<h2>
-<div id="tag_cloud">
-  <% tag_cloud Answer.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
+  <h2>List of Daily Questions</h2>
+</header>
+
+<div class="question-list">
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= link_to question.question, question %> (<%= question.show_month %>/<%= question.show_day %>)</li>
+    <% end %>
+  </ul>
 </div>
-
-<h2>List of Daily Questions</h2>
-
-<ul>
-<% @questions.each do |question| %>
-  <li><%= link_to question.question, question %> (<%= question.show_month %>/<%= question.show_day %>)</li>
-<% end %>
-</ul>
-

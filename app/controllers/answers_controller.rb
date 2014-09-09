@@ -42,7 +42,7 @@ before_action :authenticate_user!, except: [:index, :show, :new]
   private
 
   def answer_params
-      params.require(:answer).permit(:answer, :user_id, :question_id, :tag_list)
+      params.require(:answer).permit(:answer, :user_id, :question_id, :tag_list, :latitude, :longitude)
   end
 
 end

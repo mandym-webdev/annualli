@@ -1,7 +1,11 @@
-All of our members
+<header>
+  <h2>All of our members</h2>
+</header>
 
-<ul>
-<% @users.each do |user| %>
-  <li><%= link_to user.user_name, user %> </li>
-<% end %>
-</ul>
+<div class="question-list">
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= link_to user.user_name, user %> </li>
+    <% end %>
+  </ul>
+</div>
