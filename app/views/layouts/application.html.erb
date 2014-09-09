@@ -16,21 +16,21 @@
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %>
       <% end %>
-    </li>
-    <li><%= link_to 'Answer Today\'s Question', root_path %></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+      |  </li>
+    <li><%= link_to 'Answer Today\'s Question', root_path %>  |  </li>
+    <li><%= link_to 'See All Questions', questions_path %>  |  </li>
+    <li><% if @user == current_user %>
+      <%= link_to 'See Your Answers', user_path %></li>
+      <% end %>
   </ul>
-
-
 </nav>
 
 
   
 
 <%= yield %>
-
+<!-- <BR><BR>
+<footer>Created by <a href="http://mandym.com">Mandy Moore</a> for General Assembly WDI
+</footer> -->
 </body>
 </html>
