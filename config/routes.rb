@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   root 'answers#new'
 
   resources :questions do
-    resources :answers
+    resources :answers, only: [:show, :index, :new, :create]
   end
 
   resources :users do
-    resources :answers
+    resources :answers, only: [:show, :index, :new, :create]
   end
 
+
+# , only: [:show, :edit, :update, :destroy, :index, :new, :create]
   # match 'tagged', to: 'answers#tagged', :as => 'tagged', via: 'get'
 
   get 'tags/:tag', to: 'answers#index', as: :tag

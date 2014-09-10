@@ -11,7 +11,7 @@ before_action :authenticate_user!, except: [:index, :show, :new]
   end
 
   def show  
-    @article = Answer.find(params[:id])
+    @answer = Answer.find(params[:id]).order(created_at: :asc)
   end
 
   def new
@@ -30,7 +30,8 @@ before_action :authenticate_user!, except: [:index, :show, :new]
     if @answer.save
       redirect_to @question
     else
-      render 'new'
+      flash[:error] = "You must submit an answer"
+      redirect_to root_path
     end
   end
 
