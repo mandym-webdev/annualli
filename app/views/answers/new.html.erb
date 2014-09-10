@@ -1,31 +1,13 @@
 <header class="dailyq">  
-<h1><%= @daily.question %></h1>
-
-<% if user_signed_in? %>
+  <h1><%= @daily.question %></h1>
+  <% if user_signed_in? %>
       <%= render 'form' %>
       <% else %>
       <h2>Please <%= link_to 'Sign In', new_user_session_path %> to submit an answer.</h2>
   <% end %>
+</header>
 
 
 
 
-<!-- <p><button class="answer">Answer This Question</button></p>
 
-<div id="overlay">
-  <div id="registration">
-    
-    <a href="#" class="close">Close</a>
-    <h1>Design Meetup</h1>
-    <input placeholder=Name>
-    <input placeholder=Email type=email>
-    <a href="#" class="confirm">Confirm</a>
-  </div>
-</div>
-
-<code>
-  clicking on ".answer" adds class "open" on "#overlay"
-  clicking on ".close, .confirm" removes class "open" on "#overlay"
-</code>
-
-</header> -->

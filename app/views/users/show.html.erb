@@ -1,23 +1,18 @@
 <header>
-<h2>Welcome back <%= @user.user_name %>!</h2>
+  <h2>Welcome <%= @user.user_name %></h2>
 </header>
-<div class="content">
-  <div>
-    <h3>Your Questions and Answers</h3>
 
+<div class="question-list">
+  <h3>Your Questions and Answers</h3>
     <% @user.questions.uniq.each do |question| %>
-      <h3><div class="answer"><%= question.question %> </div></h3>
+      <h3><%= question.question %></h3>
         <% question.answers.each do |answer| %>
-        <% if answer.user == current_user %>
-          <div class="answer"><%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %></div>
+        <% if answer.user == @user %>
+          <p><%= answer.created_at.strftime("%Y:") %> <%= answer.answer %> <br>
+          Tags: <%= answer.tag_list %></p>
+          <!-- Tags: <%= raw answer.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %> -->
+
         <% end %>
-      <% end %>
+      <% end %><hr>
     <% end %>
   </div>
-</content>
-
-<!-- <h3>Profile</h3>
-<ul>
-  <li></li>
-
-</ul> -->

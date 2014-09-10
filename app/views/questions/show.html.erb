@@ -1,11 +1,16 @@
-Question for: <%= @question.show_month %>/<%= @question.show_day %>
+<header>
+  <h2>Question for <%= @question.show_month %>/<%= @question.show_day %>:</h2>
+  <h2><%= @question.question %></h2>
+</header>
 
-<h2><%= @question.question %></h2>
+<div class="question-list">
 
-<h3>Answers</h3>
+  <h3>Answers</h3>
 
-<% @question.answers.each do |answer| %>
-  <div class="answer"><%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %></div>
-<% end %>
+  <% @question.answers.each do |answer| %>
+    <%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %><br>
+  <% end %>
+
+</div>
 
 <%#= link_to @user.user_name, user_path %>

@@ -1,8 +1,11 @@
-<h2>Each Daily Question</h2>
+<header>
+  <h2>The Daily Questions</h2>
+</header>
 
-<ul>
-<% @questions.each do |question| %>
-  <li><%= link_to question.question, question %> (<%= question.show_month %>/<%= question.show_day %>)</li>
-<% end %>
-</ul>
-
+<div class="question-list">
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= question.show_month %>/<%= question.show_day %> - <%= link_to question.question, question %> </li>
+    <% end %>
+  </ul>
+</div>

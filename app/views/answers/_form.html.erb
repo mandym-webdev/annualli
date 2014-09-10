@@ -1,6 +1,12 @@
 <%= form_for [@daily, @answer] do |answer| %>
-  <%= answer.label :add_your_answer %><br>
-  <%= answer.text_area :answer %><br>
+
+  <h3><%= answer.label :answer, "Submit Your Answer", :class => "answer-txt" %></h3><br><BR>
+  <%= answer.text_area :answer, :class => "answer" %><br><br>
+
+  <h3><%= answer.label :tags, "Tags (separate by commas, use '-' with multi-word tags)"%></h3><br>
+  <%= answer.text_field :tag_list, :class => "tags" %><br><BR>
 
   <%= answer.submit %>
 <% end %>
+
+

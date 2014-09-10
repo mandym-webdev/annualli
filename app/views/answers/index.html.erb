@@ -1,0 +1,15 @@
+<div id="tag_cloud">
+  <% tag_cloud Answer.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+<% @user.questions.uniq.each do |question| %>
+  <h3><div class="answer"><%= question.question %> </div></h3>
+    <% question.answers.each do |answer| %>
+    <% if answer.user == @user %>
+      <div class="answer"><%= answer.answer %> <%= answer.created_at.strftime("(%Y)") %></div>
+      Tags: <%= raw answer.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %>
+    <% end %>
+  <% end %>
+<% end %>
