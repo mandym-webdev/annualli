@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src=uilang.js></script>
 </head>
 <body>
 
@@ -22,8 +23,8 @@
     <li><%= link_to 'Answer Today\'s Question', root_path %>  |  </li>
     <li><%= link_to 'See All Questions', questions_path %>  |  </li>
     <li><%= link_to 'See All Users', users_path %>  |  </li>
-    <li><% if @user %>
-      <%= link_to 'See Your Answers', user_path %></li>
+    <li><% if current_user %>
+      <%= link_to 'See Your Answers', user_path(current_user) %></li>
       <% end %>
   </ul>
 </nav>

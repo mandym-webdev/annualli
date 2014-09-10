@@ -4,8 +4,6 @@
 
 <div class="question-list">
   <h3>Your Questions and Answers</h3>
-
-  <div class="border-bottom">
     <% @user.questions.uniq.each do |question| %>
       <h3><%= question.question %></h3>
         <% question.answers.each do |answer| %>
@@ -13,8 +11,11 @@
           <p><%= answer.created_at.strftime("%Y:") %> <%= answer.answer %> <br>
           Tags: <%= answer.tag_list %></p>
           <!-- Tags: <%= raw answer.tags.map { |t| link_to t.name, tag_path(t.name) }.join(', ') %> -->
+
         <% end %>
-      <% end %>
+
+      <% end %><hr>
+      
     <% end %>
+
   </div>
-</div>

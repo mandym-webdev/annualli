@@ -1,42 +1,43 @@
-<h2>Sign up</h2>
+<div class="login">
 
-<h2>Already a member? 
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end -%></h2>
+  <h3>Already a member? 
+  <%- if controller_name != 'sessions' %>
+    <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <% end -%></h3>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :user_name %><br />
-  <%= f.text_field :user_name, autofocus: true %></div><br>
+      <%= f.label :user_name %><br />
+      <%= f.text_field :user_name, autofocus: true %><br><br>
 
-  Where do you live?
+      Where do you live?<br>
 
-  <div><%= f.label :city %><br />
-  <%= f.text_field :home_city, autofocus: true %></div>
+      <%= f.label :city %><br />
+      <%= f.text_field :home_city, autofocus: true %><br>
 
-  <div><%= f.label :state %><br />
-  <%= f.text_field :home_state, autofocus: true %></div>
+      <%= f.label :state %><br />
+      <%= f.text_field :home_state, autofocus: true %><br>
 
-  <div><%= f.label :country %><br />
-  <%= f.text_field :home_country, autofocus: true %></div>
+      <%= f.label :country %><br />
+      <%= f.text_field :home_country, autofocus: true %><br>
 
-  <%= radio_button_tag(:gender, "female") %><br>
-  <%= label_tag(:gender_female, "Female") %><br>
-  <%= radio_button_tag(:gender, "male") %><br>
-  <%= label_tag(:gender_male, "Male") %><br><br>
+      <%= radio_button_tag(:gender, "female") %><br>
+      <%= label_tag(:gender_female, "Female") %><br>
+      <%= radio_button_tag(:gender, "male") %><br>
+      <%= label_tag(:gender_male, "Male") %><br><br>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %><br>
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+      <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %><br>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %><br>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <%= f.submit "Sign up" %>
+    <% end %>
 
+</div>
 <%= render "devise/shared/links" %>
