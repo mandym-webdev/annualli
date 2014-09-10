@@ -5,19 +5,19 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def location
-    if params[:location].blank?
-      if Rails.env.test? || Rails.env.development?
-        @location ||= Geocoder.search("50.78.167.161").first
-      else
-        @location ||= request.location
-      end
-    else
-      params[:location].each {|l| l = l.to_i } if params[:location].is_a? Array
-      @location ||= Geocoder.search(params[:location]).first
-      @location
-    end
-  end
+  # def location
+  #   if params[:location].blank?
+  #     if Rails.env.test? || Rails.env.development?
+  #       @location ||= Geocoder.search("50.78.167.161").first
+  #     else
+  #       @location ||= request.location
+  #     end
+  #   else
+  #     params[:location].each {|l| l = l.to_i } if params[:location].is_a? Array
+  #     @location ||= Geocoder.search(params[:location]).first
+  #     @location
+  #   end
+  # end
 
   protected
 

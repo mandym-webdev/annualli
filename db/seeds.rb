@@ -259,7 +259,7 @@ Question.create([
   {question: 'How much is a gallon of gas?', show_month: 9, show_day: 6},
   {question: 'What was the last stupid thing you did?', show_month: 9, show_day: 7},
   {question: 'What’s the next book you are going to read?', show_month: 9, show_day: 8},
-  {question: 'What was the mistake?', show_month: 9, show_day: 9},
+  {question: 'What was the last mistake you made?', show_month: 9, show_day: 9},
   {question: 'What was the last gift you gave?', show_month: 9, show_day: 10},
   {question: 'What is your mission?', show_month: 9, show_day: 11},
   {question: 'If others described how you acted today in one word, it would be _________', show_month: 9, show_day: 12},
