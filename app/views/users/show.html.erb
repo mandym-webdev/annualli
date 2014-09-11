@@ -4,7 +4,7 @@
 
 <div class="question-list">
   <h3>Your Questions and Answers</h3>
-    <% @user.questions.uniq.each do |question| %>
+    <% @user.questions.order("id ASC").uniq.each do |question| %>
       <h3><%= question.show_month %>/<%= question.show_day %> - <%= question.question %></h3>
         <% question.answers.each do |answer| %>
         <% if answer.user == @user %>
@@ -15,3 +15,6 @@
       <% end %><hr>
     <% end %>
   </div>
+
+
+<!-- .order(question_id: :DESC) -->
