@@ -5,13 +5,6 @@ class Answer < ActiveRecord::Base
 
   validates :answer, presence: true
 
-  # geocoded_by :ip_address
-  # after_validation :geocode
-
-  # def ip_address
-  #   result = request.location
-  # end
-
 end
 
 

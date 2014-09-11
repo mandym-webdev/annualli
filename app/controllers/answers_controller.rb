@@ -24,9 +24,6 @@ before_action :authenticate_user!, except: [:index, :show, :new]
     @answer = Answer.new( answer_params )
     @answer.user_id = current_user.id
     @answer.question_id = @question.id
-    # request = Geocoder::Result.new
-    # result = request.location
-
     if @answer.save
       redirect_to @question
     else

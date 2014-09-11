@@ -18,28 +18,26 @@
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %>
-              <% end %>
-    |</li> 
+      <% end %>
+    </li> 
     <li><%= link_to 'See Today\'s Question', root_path %>|</li>
     <li><%= link_to 'See All Questions', questions_path %>|</li>
     <li><%= link_to 'See All Users', users_path %>|</li>
-    <li><% if current_user %>
-      <%= link_to 'See Your Answers', user_path(current_user) %></li>
+    <li>
+      <% if current_user %>
+        <%= link_to 'See Your Answers', user_path(current_user) %></li>
       <% end %>
-    
   </ul>
 </nav>
 
 <div>
-<%= flash[:error] %>
+  <%= flash[:error] %>
 </div>
-
-
-  
+ 
 
 <%= yield %>
-<!-- <BR><BR>
-<footer>Created by <a href="http://mandym.com">Mandy Moore</a> for General Assembly WDI
-</footer> -->
+
+
+
 </body>
 </html>
