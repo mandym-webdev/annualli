@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find( params[:id] ).answers.order(id: :ASC)
+    @question = Question.find( params[:id] )
   end
 
 
