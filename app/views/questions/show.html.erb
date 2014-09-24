@@ -3,6 +3,31 @@
   <h2><%= @question.question %></h2>
 </header>
 
+<div class="form-ind">
+<%= form_for [@question, @answer] do |answer| %>
+
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <%= answer.text_area :answer, :class => "answer-ind", :placeholder => "Submit Your Answer" %><br><br>
+
+  
+  <%= answer.text_field :tag_list, :class => "tags-ind", :placeholder => "Tags (separate by commas)"%><br><br>
+
+  <%= answer.submit 'Add Your Answer', :class => 'answer-sub-ind'%>
+<% end %>
+</div>
+
 <div class="question-list">
 
   <h3>Answers</h3>
